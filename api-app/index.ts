@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import v1Router from './src/v1/routes';
 
 dotenv.config();
 
@@ -14,9 +15,7 @@ app.use(
 );
 app.use(express.json());
 
-app.get('/', (_req, res) => {
-  res.send('Express Server');
-});
+app.use('/api/v1', v1Router);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
