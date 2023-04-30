@@ -5,7 +5,7 @@ export const mortgageCalculatorValidator = [
     .exists()
     .withMessage('Property Price is required')
     .isFloat({ min: 1 })
-    .withMessage('Property Price has to be greater than 1'),
+    .withMessage('Property Price has to be greater than 0'),
   body('downPayment')
     .exists()
     .withMessage('Down Payment is required')
@@ -33,7 +33,7 @@ export const mortgageCalculatorValidator = [
       const isFiveMultiple = value % 5 === 0;
       if (value < minYear || value > maxYear || !isFiveMultiple) {
         throw new Error(
-          'Amortization Period has to be a value between 5 and 30. Also increments by 5',
+          'Amortization Period has to be a value between 5 and 30, and incremented by 5',
         );
       }
       return true;
