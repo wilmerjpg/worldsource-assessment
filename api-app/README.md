@@ -20,6 +20,9 @@ $ npm run start
 
 # watch mode
 $ npm run dev
+
+# run tests
+$ npm run test
 ```
 
 You can now access the app at <http://localhost:3001>
